@@ -1,0 +1,99 @@
+.booking
+  height: 50rem
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 55%, rgba(195, 149, 106, 0.2) 55%, rgba(162, 79, 3, 0.2) 100%), url(../img/form-bg.jpg) center/cover
+  @media (min-resolution: 192dpi) and (min-width: 670px), (min-width: 1340px)
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 55%, rgba(195, 149, 106, 0.2) 55%, rgba(162, 79, 3, 0.2) 100%), url(../img/form-bg-2x.jpg) center/cover
+  border-radius: 0.3rem
+  overflow: hidden
+  @include respond(tab-port)
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%, rgba(195, 149, 106, 0.2) 55%, rgba(162, 79, 3, 0.2) 100%), url(../img/form-bg.jpg)
+.form
+  width: 60%
+  padding-top: 5rem
+  padding-left: 5rem
+  @include respond(tab-port)
+    width: 100%
+    padding-top: 3rem
+    padding-left: 3rem
+  &__group 
+    &:not(:last-child)
+      margin-bottom: 2.5rem
+    &:nth-child(4)
+      margin-bottom: 4rem
+    @include respond(tab-land)
+      &:not(:last-child)
+        margin-bottom: 0
+  &__input
+    width: 70%
+    padding: 2rem 0 2rem 2rem
+    font-size: $font-size-paragraph
+    letter-spacing: 0.2rem
+    font-weight: 400
+    color: $color-black
+    border: none
+    border-bottom: .3rem solid transparent
+    background: $color-white
+    border-radius: 0.3rem
+    @include respond(tab-port)
+      width: 93%
+      box-shadow: $box-shadow-dark
+    &:focus
+      outline: none
+      border-bottom: .3rem solid $color-valid
+      box-shadow: $box-shadow-dark
+    &:focus:invalid
+      border-bottom: .3rem solid $color-invalid
+  &__label
+    font-size: 1.6rem
+    letter-spacing: 0.2rem
+    font-weight: 400
+    display: block
+    margin-top: 1rem
+    margin-left: 1.5rem
+    transition: all .2s
+  &__input:placeholder-shown + &__label
+    opacity: 0
+    visibility: none
+    transform: translateY(-3rem)
+  &__group-radio
+    width: 41%
+    display: inline-block
+    @include respond(tab-land)
+      display: block
+      width: 67%
+      margin-bottom: 2rem
+  &__input-radio 
+    display: none
+  &__label-radio
+    padding-left: 4rem
+    cursor: pointer
+    position: relative
+  &__btn-radio
+    width: 3rem
+    height: 3rem
+    display: block
+    position: absolute
+    left: 0
+    top: -.5rem
+    border-radius: 50%
+    border: .5rem solid $color-brown-dark
+    &::after
+      content: ""
+      display: block
+      width: 1.5rem
+      height: 1.5rem
+      border-radius: 50%
+      background: $color-brown-dark
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      opacity: 0
+      transition: all .2s
+  &__input-radio:checked ~ &__label-radio &__btn-radio::after 
+    opacity: 1
+  & .btn_brown
+    @include respond(tab-port)
+      width: 93%
+
+

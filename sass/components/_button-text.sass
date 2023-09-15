@@ -1,0 +1,20 @@
+.btn-text
+  &:link, &:visited
+    display: inline-block
+    font-size: $font-size-paragraph
+    letter-spacing: 0.2rem
+    font-weight: 700
+    color: $color-brown-light
+    text-decoration: none
+    padding: 1rem
+    border-bottom: 1px solid $color-brown-light
+    transition: all .4s
+    @include respond(tab-port)
+      margin-bottom: 2rem
+  &:hover
+    background-color: $color-brown-light
+    color: $color-white
+    box-shadow: $box-shadow-dark
+    transform: translateY(-.2rem)
+  &:active
+    transform: translateY(0)

@@ -1,0 +1,102 @@
+.nav
+  &__toggle
+    display: none
+  &__btn
+    background: $color-white
+    height: 7rem
+    width: 7rem
+    border-radius: 50%
+    position: fixed
+    top: 9rem
+    right: 9rem
+    z-index: 60
+    text-align: center
+    cursor: pointer
+    @include respond(tab-port)
+      box-shadow: $box-shadow-dark
+  &__icon
+    position: relative
+    margin-top: 3.5rem
+    &,
+    &::before,
+    &::after
+      width: 3rem
+      height: .2rem
+      background: $color-black
+      display: inline-block
+      transition: all .2s
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+      left: 0
+    &::before
+      top: -.8rem
+    &::after
+      top: .8rem
+  &__bg
+    width: 5rem
+    height: 5rem
+    border-radius: 50%
+    background: radial-gradient($color-brown-light, $color-brown-dark)
+    position: fixed
+    right: 10rem
+    top: 10rem
+    z-index: 50
+    transition: all .5s 
+  &__menu
+    height: 100vh
+    width: 100%
+    position: fixed
+    top: 0
+    right: 0
+    z-index: 55
+
+    opacity: 0
+    width: 0
+    transition: all .5s cubic-bezier(.68, -.6, .32, 1.6)
+  &__list
+    list-style: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  &__item
+    text-align: center
+    &:not(:last-child)
+      margin-bottom: 6rem
+  &__link
+    &:link, &:visited
+      display: inline-block
+      padding: 1rem 2rem
+      font-size: 4rem
+      text-transform: uppercase
+      color: $color-white
+      text-decoration: none
+      letter-spacing: 0.5rem
+      background: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%)
+      background-size: 220%
+      transition: all .4s
+    &:hover, &:active
+      background-position: 100%
+      color: $color-brown-dark
+      transform: translate(1rem)
+  &__toggle:checked ~ &__bg 
+    transform: scale(110)
+  &__toggle:checked ~ &__menu 
+    width: 100%
+    opacity: 1
+  &__btn:hover &__icon::before
+    top: -1rem
+  &__btn:hover &__icon::after
+    top: 1rem
+  &__toggle:checked + &__btn &__icon 
+    background: transparent
+  &__toggle:checked + &__btn &__icon::before
+    top: 0
+    transform: rotate(45deg)
+  &__toggle:checked + &__btn &__icon::after
+    top: 0
+    transform: rotate(-45deg)
+    
+    
